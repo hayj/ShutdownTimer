@@ -45,7 +45,7 @@ class ShutdownTimer:
             print(remaining)
             self.time_left -= 1
 
-            if self.time_left == 30:
+            if self.time_left == 45:
                 self.root.lift()
                 self.root.attributes("-topmost", True)
                 self.root.after_idle(self.root.attributes, "-topmost", False)
@@ -77,5 +77,5 @@ if __name__ == "__main__":
     root = tk.Tk()
     root.geometry("800x200")  # Adjusted window size to accommodate buttons
     root.eval("tk::PlaceWindow . center")  # Center window
-    app = ShutdownTimer(root, test=True)
+    app = ShutdownTimer(root, test=False)
     root.mainloop()
